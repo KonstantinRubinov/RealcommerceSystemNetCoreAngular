@@ -1,0 +1,47 @@
+aside{
+    align-content: center;
+    border-left: 1px solid #c3c3c3;
+    height: auto;
+}
+
+.mydata{
+    text-align: center;
+}
+
+form{
+    padding-top:1%;
+    align-items: center;
+    justify-content: center;
+}
+
+ul{
+    align-content: center;
+}
+
+h6{
+    text-align:center;
+}
+
+li{
+    text-align:center;
+}
+
+.centered{
+    padding-left: 15%;
+    padding-right: 15%;
+    padding-top: 5%;
+}
+
+img{
+    width: 25%;
+}
+    
+.mybutton{
+    width: 70%;
+    height: 100%;
+    margin-left: 5%;
+}
+
+.one{
+    padding: 0%;
+}

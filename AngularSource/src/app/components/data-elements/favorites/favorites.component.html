@@ -1,0 +1,27 @@
+<form class="form-inline my-2 my-lg-0">
+    <h2>Favorites</h2>
+</form>
+<div class="row">
+    <section class="col-8">
+        <div class="row centered" *ngIf="weather">
+            <div class="mydata col-sm-6 col-xs-4">
+                <p>{{localizedName}} {{countryLocalizedName}}</p>
+                <p>{{weather.weatherText}} {{weather.weatherValue}}c</p>
+            </div>
+            <div class="one col-sm-6 col-xs-4">
+                <img src='../../../../assets/images/heart.png' onerror="this.onerror=null;this.src='../../../../assets/images/heart.png';" alt="Heart image cap">
+                <button type="button" class="mybutton btn btn-outline-danger" value="{{weather.weatherKey}}" attr.id="{{weather.weatherKey}}" (click)="deleteData($event)">Remove from Favorites</button>
+            </div>
+            <!-- <button type="button" class="btn btn-outline-danger col-sm-6 col-xs-4" value="{{weather.weatherKey}}" attr.id="{{weather.weatherKey}}" (click)="deleteData($event)">Remove from Favorites</button> -->
+        </div>
+    </section>
+    <aside class="col-4">
+        <h6 *ngIf="cities.length>0">There Are {{cities.length}} Favorite Cities</h6>
+        <h6 *ngIf="cities.length==0">There Are No Favorite Cities</h6>
+        <ul>
+            <li *ngFor="let city of cities; let i = index">
+                <button type="button" class="btn btn-link" value="{{cities[i].cityKey}}" attr.id="{{cities[i].cityKey}}" (click)="showData($event)">{{cities[i].cityLocalizedName}} {{cities[i].cityCountryLocalizedName}}</button>
+            </li>
+        </ul>
+    </aside>
+</div>

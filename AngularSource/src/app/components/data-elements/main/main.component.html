@@ -1,0 +1,28 @@
+<form class="form-inline my-2 my-lg-0">
+    <input class="form-control mr-sm-2" name="search" type="search" placeholder="Search" aria-label="Search" [(ngModel)]="searchByWord">
+    <button class="btn btn-outline-success col-md-1 col-sm-2 col-xs-4 active" (click)="Search()">Search</button>
+</form>
+<div class="row">
+    <section class="col-8">
+        <div class="row centered" *ngIf="weather">
+            <div class="mydata col-sm-6 col-xs-4">
+                <p>{{localizedName}} {{countryLocalizedName}}</p>
+                <p>{{weather.weatherText}} {{weather.weatherValue}}c</p>
+            </div>
+            <div class="one col-sm-6 col-xs-4">
+                <img src='../../../../assets/images/heart.png' onerror="this.onerror=null;this.src='../../../../assets/images/heart.png';" alt="Heart image cap">
+                <button type="button" class="mybutton btn btn-outline-primary" value="{{weather.weatherKey}}" attr.id="{{weather.weatherKey}}" (click)="saveData($event)">Add To Favorites</button>
+            </div>
+            <!-- <button type="button" class="btn btn-outline-primary col-sm-6 col-xs-4" value="{{weather.weatherKey}}" attr.id="{{weather.weatherKey}}" (click)="saveData($event)">Add To Favorites</button> -->
+        </div>
+    </section>
+    <aside class="col-4">
+        <h6 *ngIf="cities.length>0">There Are {{cities.length}} Found Cities</h6>
+        <h6 *ngIf="cities.length==0">There Are No Found Cities</h6>
+        <ul>
+            <li *ngFor="let city of cities; let i = index">
+                <button type="button" class="btn btn-link" value="{{cities[i].cityKey}}" attr.id="{{cities[i].cityKey}}" (click)="showData($event)">{{cities[i].cityLocalizedName}} {{cities[i].cityCountryLocalizedName}}</button>
+            </li>
+        </ul>
+    </aside>
+</div>

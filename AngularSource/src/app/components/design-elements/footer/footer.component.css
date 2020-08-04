@@ -1,0 +1,12 @@
+div {
+    height: 100%;
+    text-align: center;
+}
+
+p {
+    text-align: center;
+    margin: 0;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+}
