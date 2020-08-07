@@ -55,6 +55,9 @@ namespace RealcommerceAPI
 			app.UseStaticFiles();
 			app.UseCookiePolicy();
 
+			//Add our new middleware to the pipeline
+			app.UseRequestResponseLogging();
+
 			app.UseMvc();
 		}
 	}
