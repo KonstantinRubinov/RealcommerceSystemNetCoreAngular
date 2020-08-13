@@ -3,7 +3,7 @@ Connected to accuweather library, and sql database to save your favorite cities.
 
 * .NET Core 2.1 server
 * MsSql database
-* Angular 9 front.
+* Angular 9 front - lazy load of routes.
 * Inter-server communication (this server communiacts with accuweather api).
 
 - user can search for city, and get list of cities - city + country, becouse some cities has similar names (+ region and key).
